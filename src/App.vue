@@ -1,11 +1,17 @@
 <template>
   <div id="app">
-    <app-header></app-header>
+    <div class="aside">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="main">
+      <app-header></app-header>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
+import Sidebar from './components/Sidebar'
+import Header from './components/Header'
 export default {
   name: 'app',
   data () {
@@ -13,6 +19,7 @@ export default {
     }
   },
   components: {
+    appSidebar: Sidebar,
     appHeader: Header
   }
 }
