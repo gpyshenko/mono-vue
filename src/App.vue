@@ -6,6 +6,9 @@
     <div class="main">
       <app-header></app-header>
       <router-view></router-view>
+      <div class="box">
+        <div class="box-inner"></div>
+      </div>
     </div>
   </div>
 </template>
