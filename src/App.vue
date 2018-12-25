@@ -5,6 +5,7 @@
     </div>
     <div class="main">
       <app-header></app-header>
+      <router-view></router-view>
     </div>
   </div>
 </template>
@@ -26,5 +27,7 @@ export default {
 </script>
 
 <style>
-
+  .app {
+    background-color: #fff;
+  }
 </style>

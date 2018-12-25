@@ -2,7 +2,8 @@
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item" v-for="(link, index) in links" :key="index">
-        <a :href="link.url" class="nav-link">{{link.title}}</a>
+        <router-link :to="link.url" class="nav-link">{{link.title}}</router-link>
+        <!-- <a :href="link.url" class="nav-link">{{link.title}}</a> -->
       </li>
     </ul>
   </nav>
@@ -15,23 +16,23 @@ export default {
             links: [
                 {
                     "title": "Главная",
-                    "url": "index"
+                    "url": "/"
                 },
                 {
                     "title": "О нас",
-                    "url": "about"
+                    "url": "/about"
                 },
                 {
                     "title": "Разработки",
-                    "url": "portfolio"
+                    "url": "/portfolio"
                 },
                 {
                     "title": "Локация",
-                    "url": "maps"
+                    "url": "/map"
                 },
                 {
                     "title": "Контактики",
-                    "url": "contacts"
+                    "url": "/contacts"
                 }
             ]
         }
