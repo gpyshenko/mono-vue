@@ -1,9 +1,11 @@
 <template>
   <div id="app" class="app flexRow">
     <app-sidebar className="app-aside"></app-sidebar>
-    <div class="app-main">
+    <div class="flexColumn app-content">
       <app-header></app-header>
-      <router-view></router-view>
+      <main class="app-main">
+        <router-view></router-view>
+      </main>
     </div>
   </div>
 </template>
@@ -28,8 +30,17 @@ export default {
 @import './styles/main.css';
 .app {
   height: 100vh;
-  &-main {
+  overflow: hidden;
+  &-content {
     width: 100%;
+  }
+  &-main {
+    height: calc(100% - 60px);
+  }
+  &-views {
+    height: 100%;
+    padding-left: 75px;
+    overflow-y: auto;
   }
 }
 

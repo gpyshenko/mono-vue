@@ -1,9 +1,10 @@
 :root {
-    --mainColor: #000;
-    --mainFont: "", sans-serif;
+    --mainColor: #051016;
+    --mainFont: "Roboto", sans-serif;
 
     --blackPearl-light: #07161d;
     --blackPearl-dark: #051016;
     --torchRed: #f21347;
     --lynch: #6b777e;
+    --cerise: #ed3661;
 }

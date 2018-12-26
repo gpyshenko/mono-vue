@@ -5,6 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 const styles = require('./webpack/loaders/styles');
 const images = require('./webpack/loaders/images');
+const fonts = require('./webpack/loaders/fonts');
 
 const env = process.env.NODE_ENV;
 
@@ -59,6 +60,7 @@ module.exports = function () {
 		common(),
 		config,
 		styles(env),
-		images(env)
+		images(env),
+		fonts()
 	])
 }

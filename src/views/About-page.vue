@@ -1,3 +1,42 @@
 <template>
-    <h1>О компании страница</h1>
+    <div class="app-views about">
+        <h1 class="about-title"><strong>
+            Команда web разработчиков</strong> 
+            <br>
+            с большим опытом 
+            <br> работы
+        </h1>
+        <div class="about-dscr">
+            <p>Компания работает на рынке с 2018 года, начиная с аутсорсинга дизайна UI и UX и ежегодно увеличивая разнообразие услуг. Теперь Mono представляет собой полнофункциональное цифровое агентство со всеми специалистами, необходимыми для эффективного творческого процесса с нуля.</p>
+            <p>Агентские отделы организованы на разных этапах удобной разработки продукта. Твердое управление проектами, основанное на лучших мировых практиках, позволяет нам запускать сложные проекты для клиентов по всему миру и обеспечивать качественный результат.</p>
+        </div>
+    </div>
 </template>
+<style>
+.about {
+    padding-top: 108px;
+    background: url('../assets/img/about.jpg') no-repeat;
+    background-size: cover;
+    &-title {
+        margin-bottom: 142px;
+        font-size: 72px;
+        font-weight: 900;
+        line-height: 90px;
+        text-transform: uppercase;
+        color: #fff;
+        strong {
+            color: var(--cerise);
+        }
+    }
+    &-dscr {
+        max-width: 1160px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: #fff;
+        p {
+            margin-bottom: 24px;
+        }
+    }
+}
+</style>

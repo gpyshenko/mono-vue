@@ -1,4 +1,4 @@
-module.exports = function (env) {
+module.exports = function () {
     return {
         module: {
             rules: [
@@ -7,7 +7,7 @@ module.exports = function (env) {
                     use: {
                         loader: 'file-loader',
                         options: {
-                            name: (env === 'dev') ? '[name].[hash].[ext]' : '[name].[ext]',
+                            name: '[name].[hash].[ext]',
                             outputPath: 'assets/fonts/'
                         }
                     }
