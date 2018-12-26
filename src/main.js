@@ -13,6 +13,12 @@ const router = new VueRouter({
   linkActiveClass: 'current'
 })
 
+router.afterEach((to, from) => {
+  console.log('Переход закончен')
+  console.log(router.currentRoute.path)
+  store.dispatch('activateMenu')
+})
+
 new Vue({
   el: '#app',
   router,
