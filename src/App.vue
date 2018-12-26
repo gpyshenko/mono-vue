@@ -1,14 +1,9 @@
 <template>
-  <div id="app">
-    <div class="aside">
-      <app-sidebar></app-sidebar>
-    </div>
-    <div class="main">
+  <div id="app" class="app flexRow">
+    <app-sidebar className="app-aside"></app-sidebar>
+    <div class="app-main">
       <app-header></app-header>
       <router-view></router-view>
-      <div class="box">
-        <div class="box-inner"></div>
-      </div>
     </div>
   </div>
 </template>
@@ -30,7 +25,20 @@ export default {
 </script>
 
 <style>
-  .app {
-    background-color: #fff;
+@import './styles/main.css';
+.app {
+  height: 100vh;
+  &-main {
+    width: 100%;
   }
+}
+
+@media (max-width: 575px) {
+  .app {
+    &-aside {
+      display: none;
+    }
+  }
+}
 </style>
+

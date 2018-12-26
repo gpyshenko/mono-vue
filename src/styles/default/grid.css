@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    max-width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flexRow, 
+.flexRow-C,
+.flexColumn, 
+.flexColumn-C, 
+.flexWrap, 
+.flexGrid { 
+    display: flex;
+}
+
+.flexColumn,
+.flexColumn-C {
+    flex-direction: column;
+}
+
+.flexRow-C,
+.flexColumn-C {
+    justify-content: center;
+    align-items: center;
+}
+
+.flexWrap, .flexGrid {
+    flex-wrap: wrap;
+}
+
+.flexGrid {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.flexCell {
+    padding-right: 15px;
+    padding-left: 15px;
+}
