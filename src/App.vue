@@ -1,6 +1,9 @@
 <template>
   <div id="app" class="app flexRow">
     <app-sidebar className="app-aside"></app-sidebar>
+    <transition name="slide">
+      <app-callback v-if="isActive"></app-callback>
+    </transition>
     <div class="flexColumn app-content">
       <app-header></app-header>
       <main class="app-main">
@@ -14,6 +17,7 @@
 
 <script>
 import Sidebar from './components/Sidebar'
+import Callback from './components/Callback'
 import Header from './components/Header'
 export default {
   name: 'app',
@@ -21,8 +25,14 @@ export default {
     return {
     }
   },
+  computed: {
+      isActive() {
+          return this.$store.state.isAct
+      }
+  },
   components: {
     appSidebar: Sidebar,
+    appCallback: Callback,
     appHeader: Header
   }
 }
@@ -38,12 +48,14 @@ export default {
   }
   &-main {
     height: calc(100% - 60px);
+    overflow-y: auto;
   }
   &-views {
-    height: 100%;
-    padding-left: 75px;
-    padding-right: 30px;
-    overflow-y: auto;
+    min-height: 100%;
+    &:not(.noPadding) {
+      padding-right: 30px;
+      padding-left: 75px;
+    }
   }
 }
 
@@ -73,10 +85,42 @@ export default {
   }
 }
 
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(340px)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0)
+    }
+    to {
+        opacity: 0;
+        transform: translateX(340px)
+    }
+}
+
+.slide-enter-active {
+    animation: slideIn .3s ease-out forwards;
+}
+
+.slide-leave-active {
+    animation: slideOut .3s ease-out forwards;
+}
+
 @media (max-width: 1200px) {
   .app {
     &-views {
-      padding-left: 30px;
+      &:not(.noPadding) {
+        padding-left: 30px;
+      }
     }
   }
 }
@@ -84,7 +128,9 @@ export default {
 @media (max-width: 767px) {
   .app {
     &-views {
-      padding-left: 15px;
+      &:not(.noPadding) {
+        padding-left: 15px;
+      }
     }
   }
 }

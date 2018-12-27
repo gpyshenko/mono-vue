@@ -1,7 +1,7 @@
 <template>
   <nav class="nav">
     <ul class="flexRow nav-list">
-      <li class="nav-item" v-for="(link, index) in links" :key="index">
+      <li class="nav-item" v-for="(link, index) in links" :key="index"> 
         <router-link :to="link.url" :exact="link.url === '/'" class="nav-link">{{link.title}}</router-link>
       </li>
     </ul>

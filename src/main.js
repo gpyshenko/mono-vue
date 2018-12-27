@@ -16,7 +16,6 @@ const router = new VueRouter({
 router.afterEach((to, from) => {
   console.log('Переход закончен')
   console.log(router.currentRoute.path)
-  store.dispatch('activateMenu')
 })
 
 new Vue({

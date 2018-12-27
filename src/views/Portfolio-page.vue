@@ -1,3 +1,14 @@
 <template>
-    <h1>Портфолио</h1>
+    <div class="app-views noPadding portfolio">
+        <app-works></app-works>
+    </div>
 </template>
+
+<script>
+import Works from '../components/Works'
+export default {
+    components: {
+        appWorks: Works
+    }
+}
+</script>
