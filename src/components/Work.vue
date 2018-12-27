@@ -1,6 +1,7 @@
 <template>
     <a href="" class="work">
-        <div class="work-img" :style="`background-image: url('./src/assets/img/works/work${img}.jpg')`"></div>
+        <div class="work-img" :style="{backgroundImage: `url('${require('../assets/img/works/work'+ img +'.jpg')}')`}">
+        </div>
     </a>
 </template>
 

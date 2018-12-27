@@ -9,7 +9,7 @@ module.exports = function (env) {
                             loader: 'file-loader',
                             options: {
                                 name: '[name].[hash].[ext]',
-                                outputPath: 'assets/img/',
+                                outputPath: 'assets/img/'
                                 // plugins: [
                                 //     require('imagemin-mozjpeg')({
                                 //         progressive: true,

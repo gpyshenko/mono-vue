@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const styles = require('./webpack/loaders/styles');
 const images = require('./webpack/loaders/images');
 const fonts = require('./webpack/loaders/fonts');
@@ -16,7 +16,6 @@ const common = function () {
 		entry: './src/main.js',
 		output: {
 			path: path.resolve(__dirname, './dist'),
-			publicPath: '/dist/',
 			filename: 'build.js'
 		},
 		module: {
@@ -50,7 +49,11 @@ const common = function () {
 		},
 		devtool: env === 'development' ? '#eval-source-map' : 'none',
 		plugins: [
-			new VueLoaderPlugin()
+			new VueLoaderPlugin(),
+			new HtmlWebpackPlugin({
+				filename: 'index.html',
+				template: './src/index.html'
+			})
 		]
 	}
 }

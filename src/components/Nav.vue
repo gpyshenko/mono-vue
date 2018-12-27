@@ -22,7 +22,7 @@ export default {
                     "url": "/about"
                 },
                 {
-                    "title": "Разработки",
+                    "title": "Портфолио",
                     "url": "/portfolio"
                 },
                 {
@@ -30,7 +30,7 @@ export default {
                     "url": "/map"
                 },
                 {
-                    "title": "Контактики",
+                    "title": "Контакты",
                     "url": "/contacts"
                 }
             ]
