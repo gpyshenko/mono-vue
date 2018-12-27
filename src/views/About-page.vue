@@ -72,7 +72,24 @@ export default {
     .about {
         padding-top: 30px;
         &-title {
+            margin-bottom: 40px;
             font-size: 42px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .about {
+        &-title {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .about {
+        &-title {
+            font-size: 32px;
         }
     }
 }

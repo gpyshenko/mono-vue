@@ -1,6 +1,9 @@
 <template>
     <header class="flexRow header">
-        <div class="header-nav">
+        <div class="header-logo" v-if="this.$store.state.resolution.mobile">
+            <app-logo></app-logo>
+        </div>
+        <div class="header-nav" v-if="!this.$store.state.resolution.mobile">
             <app-nav></app-nav>
         </div>
         <div class="header-burger">
@@ -10,10 +13,12 @@
 </template>
 
 <script>
+import Logo from './Logo';
 import Nav from './Nav'
 import Burger from './Burger'
 export default {
     components: {
+        appLogo: Logo,
         appNav: Nav,
         appBurger: Burger
     }
@@ -41,6 +46,12 @@ export default {
     .header {
         padding-right: 15px;
         padding-left: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .header {
+        
     }
 }
 </style>

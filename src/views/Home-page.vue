@@ -1,5 +1,5 @@
 <template>
-    <div class="app-views home">
+    <div class="flexColumn app-views home">
         <div class="flexRow home-info">
             <p class="home-event">Акция</p>
             <p class="home-date">до 16.11.18</p>
@@ -19,7 +19,6 @@ export default {
 <style>
 .home {
     padding-top: 198px;
-    padding-bottom: 198px;
     background: url('../assets/img/home.jpg') no-repeat;
     &-info {
         align-items: center;
@@ -60,6 +59,56 @@ export default {
         transition: box-shadow .3s ease-out;
         &:hover {
             box-shadow: 0 5px 16px rgba(0,0,0,.3);
+        }
+    }
+}
+
+@media (max-width: 1200px), (max-height: 767px) {
+    .home {
+        justify-content: center;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .home {
+        &-title {
+            font-size: 54px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .home {
+        &-title {
+            font-size: 42px;
+        }
+        &-btn {
+            max-width: 180px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .home {
+        &-title {
+            font-size: 36px;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .home {
+        &-title {
+            font-size: 32px;
+        }
+        &-btn {
+            max-width: 160px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            font-size: 16px;
         }
     }
 }

@@ -39,6 +39,29 @@ export default {
         &-num {
             font-size: 48px;
         }
+        &-subtitle {
+            max-width: 150px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .feature {
+        &-subtitle {
+            max-width: 140px;
+            font-size: 22px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .feature {
+        &-num {
+            margin-bottom: 10px;
+        }
+        &-subtitle {
+            max-width: 100%;
+        }
     }
 }
 </style>

@@ -53,4 +53,26 @@ export default {
     }
   }
 }
+
+@media (max-width: 767px) {
+  .features {
+    &-item {
+      &:not(:last-child) {
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .features {
+    flex-direction: column;
+    &-item {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
 </style>

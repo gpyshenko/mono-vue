@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="app flexRow">
-    <app-sidebar className="app-aside"></app-sidebar>
+    <app-sidebar className="app-aside" v-if="!this.$store.state.resolution.mobile"></app-sidebar>
     <transition name="slide">
       <app-callback v-if="isActive"></app-callback>
     </transition>
@@ -16,6 +16,10 @@
 </template>
 
 <script>
+let resolution = {
+  mobile: window.matchMedia('(max-width: 575px)')
+};
+
 import Sidebar from './components/Sidebar'
 import Callback from './components/Callback'
 import Header from './components/Header'
@@ -34,6 +38,18 @@ export default {
     appSidebar: Sidebar,
     appCallback: Callback,
     appHeader: Header
+  },
+  created() {
+    var that = this;
+    function checkResolution(e) {
+      if(e.matches) {
+        that.$store.dispatch('setResolution', true)
+      } else {
+        that.$store.dispatch('setResolution', false)
+      }
+    }
+    checkResolution(resolution.mobile)
+    resolution.mobile.addListener(checkResolution)
   }
 }
 </script>
@@ -54,6 +70,7 @@ export default {
     min-height: 100%;
     &:not(.noPadding) {
       padding-right: 30px;
+      padding-bottom: 30px;
       padding-left: 75px;
     }
   }
@@ -137,9 +154,6 @@ export default {
 
 @media (max-width: 575px) {
   .app {
-    &-aside {
-      display: none;
-    }
     &-content {
       width: 100%;
     }
