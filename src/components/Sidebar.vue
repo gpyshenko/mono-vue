@@ -30,4 +30,10 @@ export default {
     padding: 18px 0 60px;
     background-color: var(--blackPearl-light);
 }
+
+@media (max-height: 767px) {
+    .sidebar {
+        padding-bottom: 18px;
+    }
+}
 </style>

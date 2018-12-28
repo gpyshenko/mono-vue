@@ -157,6 +157,11 @@ export default {
     &-content {
       width: 100%;
     }
+    &-views {
+      &:not(.noPadding) {
+        padding-right: 15px;
+      }
+    }
   }
 }
 </style>

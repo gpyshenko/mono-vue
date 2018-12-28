@@ -47,6 +47,10 @@ button {
     cursor: pointer;
 }
 
+label {
+    display: block;
+}
+
 input[type="search"] {
     &::-webkit-search-cancel-button {
         display: none;
