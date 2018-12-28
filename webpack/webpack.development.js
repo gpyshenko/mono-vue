@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-console.log(path.join(__dirname, '../src'))
-
 const config = {
     mode: 'development',
     devServer: {

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 
-import routes from './router/index'
+import routes from './router/router'
 import store from './store/store'
 
 Vue.use(VueRouter)
