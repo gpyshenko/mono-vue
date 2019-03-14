@@ -7,19 +7,30 @@
                     <app-input :tag="input.tag" :label="input.label" :type="input.type" :name="input.name" @data="getData($event,input)"></app-input>
                 </div>
                 <button class="contactsForm-btn" type="button" @click="sendData">Отправить</button>
+                <app-radio v-for="(radio,index) in radios.inputs"
+                           :key="index"
+                           :props="radio"
+                           :model="radios.radioModel"
+                           @change="change"
+                />
+                {{radios.radioModel}}
             </form>
         </div>
     </div>
 </template>
 
 <script>
+    import {data} from '../data/radios';
 import Input from '../components/Input'
+import Radio from '../components/Radio'
 export default {
     components: {
-        appInput: Input
+        appInput: Input,
+        appRadio: Radio
     },
     data() {
         return {
+            radios: data,
             inputs: [
                 {
                     tag: 'input',
@@ -52,6 +63,9 @@ export default {
             let rows = this.inputs;
             let data = rows.map((input) => ({name : input.model}))
             console.log(data)
+        },
+        change(e) {
+            this.radios.radioModel = e
         }
     }
 }

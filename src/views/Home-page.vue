@@ -8,11 +8,13 @@
         <div class="home-controls">
             <router-link to="/about" class="home-btn">Подробнее</router-link>
         </div>
+        {{param}}
     </div>
 </template>
 <script>
+import {mixin} from '../components/mixin.js'
 export default {
-    
+    mixins: [mixin]
 }
 </script>
 

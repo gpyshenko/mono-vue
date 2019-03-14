@@ -1,0 +1,25 @@
+{
+  "data": {
+    "title": {
+      "ru": "Настройка нотификаций",
+      "uz": "e-mailni o'zgartirish"
+    },
+    "radioModel": "sms",
+    "inputs": [
+      {
+        "type": "radio",
+        "key": "notifySms",
+        "title": "SMS",
+        "name": "notify",
+        "value": "sms"
+      },
+      {
+        "type": "radio",
+        "key": "notifyEmail",
+        "title": "Email",
+        "name": "notify",
+        "value": "email"
+      }
+    ]
+  }
+}
