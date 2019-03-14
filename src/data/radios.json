@@ -4,7 +4,7 @@
       "ru": "Настройка нотификаций",
       "uz": "e-mailni o'zgartirish"
     },
-    "radioModel": "sms",
+    "radioModel": "email",
     "inputs": [
       {
         "type": "radio",

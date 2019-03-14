@@ -4,14 +4,14 @@
             <h1 class="contacts-title">Написать нам</h1>
             <form action="" class="contactsForm">
                 <div class="contactsForm-item" v-for="input in inputs" :key="input.name"> 
-                    <app-input :tag="input.tag" :label="input.label" :type="input.type" :name="input.name" @data="getData($event,input)"></app-input>
+                    <app-input :tag="input.tag" :label="input.label" :type="input.type" :name="input.name" @data="getData($event,input)"/>
                 </div>
                 <button class="contactsForm-btn" type="button" @click="sendData">Отправить</button>
                 <app-radio v-for="(radio,index) in radios.inputs"
                            :key="index"
                            :props="radio"
                            :model="radios.radioModel"
-                           @change="change"
+                           v-model="radios.radioModel"
                 />
                 {{radios.radioModel}}
             </form>
@@ -67,6 +67,8 @@ export default {
         change(e) {
             this.radios.radioModel = e
         }
+    },
+    mounted() {
     }
 }
 </script>
